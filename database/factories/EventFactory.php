@@ -22,7 +22,9 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word,
+            'from' => now()->firstOfMonth(),
+            'to' =>  now()->lastOfMonth(),
         ];
     }
 }

@@ -149,10 +149,7 @@
                         >
                             <label v-text="day.day" class="mb-2"></label>
 
-                            <div
-                                v-if="props.event.details"
-                                v-show="hasEvent(day.id)"
-                            >
+                            <div v-if="props.event" v-show="hasEvent(day.id)">
                                 <label
                                     v-text="props.event.name"
                                     class="
@@ -185,16 +182,11 @@ import JetCheckbox from "@/Jetstream/Checkbox.vue";
 import JetButton from "@/Jetstream/Button.vue";
 import { useForm } from "@inertiajs/inertia-vue3";
 import moment from "moment";
-import { ref } from "@vue/reactivity";
 
 const props = defineProps({
     event: {
         type: Object,
     },
-});
-
-const masks = ref({
-    weekdays: "WWW",
 });
 
 const form = useForm({

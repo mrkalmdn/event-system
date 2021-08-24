@@ -22,7 +22,7 @@ class EventDetailFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'date' => now()->format('Y-m-d'),
         ];
     }
 }
